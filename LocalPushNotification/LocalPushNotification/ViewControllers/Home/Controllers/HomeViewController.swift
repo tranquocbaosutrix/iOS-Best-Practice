@@ -45,6 +45,8 @@ class HomeViewController: UIViewController {
     /// MARK: Functions
     private func setupUI() {
         title = "Home"
+        clearBackButtonTitle()
+        
         view.addSubview(tableViewCaseStudy)
 
         tableViewCaseStudy.snp.makeConstraints { make in

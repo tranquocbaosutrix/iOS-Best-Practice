@@ -79,7 +79,7 @@ class HomeViewModel {
         case .HealthKit:
             return nil
         case .CallKit:
-            return nil
+            return CallKitHomeViewController()
         case .AVKit:
             return nil
         case .PDFKit:

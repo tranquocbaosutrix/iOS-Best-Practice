@@ -19,16 +19,17 @@
 		E215BF5C284767A5000B4570 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215BF5B284767A5000B4570 /* UIViewController+Extensions.swift */; };
 		E215BF5E284771B7000B4570 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215BF5D284771B7000B4570 /* UIApplication+Extensions.swift */; };
 		E22F3D56285329040047CD21 /* CaseStudyUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F3D55285329040047CD21 /* CaseStudyUITableViewCell.swift */; };
-		E26915172853AEC4005925B4 /* HomeCoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26915162853AEC4005925B4 /* HomeCoreDataViewModel.swift */; };
+		E26915172853AEC4005925B4 /* CoreDataHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26915162853AEC4005925B4 /* CoreDataHomeViewModel.swift */; };
 		E26915192853B63A005925B4 /* NewTaskUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26915182853B63A005925B4 /* NewTaskUITableViewCell.swift */; };
 		E27C482C2855B02200ABB445 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C482B2855B02200ABB445 /* Date+Extensions.swift */; };
 		E27C482F2855B29300ABB445 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C482E2855B29300ABB445 /* TaskModel.swift */; };
 		E27C48372855C51F00ABB445 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C48362855C51F00ABB445 /* NSObject+Extensions.swift */; };
 		E27C48392855C66600ABB445 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C48382855C66600ABB445 /* UIScrollView+Extensions.swift */; };
 		E27C483C2855F51300ABB445 /* CallKitHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C483B2855F51300ABB445 /* CallKitHomeViewController.swift */; };
+		E27C48402856098900ABB445 /* CallKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C483F2856098900ABB445 /* CallKitViewModel.swift */; };
 		E293D79E2851F46500269F79 /* MyCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E293D79C2851F46500269F79 /* MyCoreData.xcdatamodeld */; };
 		E293D7A12851F49D00269F79 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293D7A02851F49D00269F79 /* CoreDataManager.swift */; };
-		E293D7A42851F59300269F79 /* HomeCoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293D7A32851F59300269F79 /* HomeCoreDataViewController.swift */; };
+		E293D7A42851F59300269F79 /* CoreDataHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293D7A32851F59300269F79 /* CoreDataHomeViewController.swift */; };
 		E293D7A62851FADE00269F79 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293D7A52851FADE00269F79 /* UITableView+Extensions.swift */; };
 		E2A3E38228487D4F0029BD27 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A3E38128487D4F0029BD27 /* LocalNotificationManager.swift */; };
 		E2A3E3882848A4A60029BD27 /* MainNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A3E3872848A4A60029BD27 /* MainNotificationManager.swift */; };
@@ -55,16 +56,17 @@
 		E215BF5D284771B7000B4570 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E22F3D55285329040047CD21 /* CaseStudyUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseStudyUITableViewCell.swift; sourceTree = "<group>"; };
 		E24175712848753000D36C9B /* LocalPushNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalPushNotification.entitlements; sourceTree = "<group>"; };
-		E26915162853AEC4005925B4 /* HomeCoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoreDataViewModel.swift; sourceTree = "<group>"; };
+		E26915162853AEC4005925B4 /* CoreDataHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHomeViewModel.swift; sourceTree = "<group>"; };
 		E26915182853B63A005925B4 /* NewTaskUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskUITableViewCell.swift; sourceTree = "<group>"; };
 		E27C482B2855B02200ABB445 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		E27C482E2855B29300ABB445 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		E27C48362855C51F00ABB445 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		E27C48382855C66600ABB445 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		E27C483B2855F51300ABB445 /* CallKitHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitHomeViewController.swift; sourceTree = "<group>"; };
+		E27C483F2856098900ABB445 /* CallKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitViewModel.swift; sourceTree = "<group>"; };
 		E293D79D2851F46500269F79 /* MyCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyCoreData.xcdatamodel; sourceTree = "<group>"; };
 		E293D7A02851F49D00269F79 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		E293D7A32851F59300269F79 /* HomeCoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoreDataViewController.swift; sourceTree = "<group>"; };
+		E293D7A32851F59300269F79 /* CoreDataHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHomeViewController.swift; sourceTree = "<group>"; };
 		E293D7A52851FADE00269F79 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		E2A3E38128487D4F0029BD27 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		E2A3E3872848A4A60029BD27 /* MainNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNotificationManager.swift; sourceTree = "<group>"; };
@@ -217,7 +219,7 @@
 		E27C48332855C06000ABB445 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				E26915162853AEC4005925B4 /* HomeCoreDataViewModel.swift */,
+				E26915162853AEC4005925B4 /* CoreDataHomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -225,7 +227,7 @@
 		E27C48342855C06C00ABB445 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E293D7A32851F59300269F79 /* HomeCoreDataViewController.swift */,
+				E293D7A32851F59300269F79 /* CoreDataHomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,9 +243,26 @@
 		E27C483A2855F4F600ABB445 /* CallKit */ = {
 			isa = PBXGroup;
 			children = (
-				E27C483B2855F51300ABB445 /* CallKitHomeViewController.swift */,
+				E27C483E2856097900ABB445 /* ViewModels */,
+				E27C483D2856097000ABB445 /* Controllers */,
 			);
 			path = CallKit;
+			sourceTree = "<group>";
+		};
+		E27C483D2856097000ABB445 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E27C483B2855F51300ABB445 /* CallKitHomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E27C483E2856097900ABB445 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E27C483F2856098900ABB445 /* CallKitViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		E293D79B2851F43000269F79 /* CoreData */ = {
@@ -415,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E293D7A62851FADE00269F79 /* UITableView+Extensions.swift in Sources */,
+				E27C48402856098900ABB445 /* CallKitViewModel.swift in Sources */,
 				E215BF5E284771B7000B4570 /* UIApplication+Extensions.swift in Sources */,
 				E27C482C2855B02200ABB445 /* Date+Extensions.swift in Sources */,
 				E27C48392855C66600ABB445 /* UIScrollView+Extensions.swift in Sources */,
@@ -431,10 +451,10 @@
 				E2A3E3882848A4A60029BD27 /* MainNotificationManager.swift in Sources */,
 				E215BF4B28472D90000B4570 /* HomeViewController.swift in Sources */,
 				E293D7A12851F49D00269F79 /* CoreDataManager.swift in Sources */,
-				E26915172853AEC4005925B4 /* HomeCoreDataViewModel.swift in Sources */,
+				E26915172853AEC4005925B4 /* CoreDataHomeViewModel.swift in Sources */,
 				E215BF5C284767A5000B4570 /* UIViewController+Extensions.swift in Sources */,
 				E293D79E2851F46500269F79 /* MyCoreData.xcdatamodeld in Sources */,
-				E293D7A42851F59300269F79 /* HomeCoreDataViewController.swift in Sources */,
+				E293D7A42851F59300269F79 /* CoreDataHomeViewController.swift in Sources */,
 				E215BF5228474156000B4570 /* RemoteNotificationManager.swift in Sources */,
 				E215BF4F28472DEB000B4570 /* Utils.swift in Sources */,
 				E2C1A0602847D728007A049A /* LocationManager.swift in Sources */,

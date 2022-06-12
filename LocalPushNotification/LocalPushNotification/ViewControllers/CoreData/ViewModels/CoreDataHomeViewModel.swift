@@ -7,7 +7,7 @@
 
 import CoreData
 
-class HomeCoreDataViewModel {
+class CoreDataViewModel {
     /// MARK: Constructor
     init() {
         getExistingTasks()

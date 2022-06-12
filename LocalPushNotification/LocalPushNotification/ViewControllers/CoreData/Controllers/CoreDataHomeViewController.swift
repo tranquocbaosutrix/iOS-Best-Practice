@@ -22,7 +22,7 @@ class HomeCoreDataViewController: UIViewController {
     }()
 
     /// MARK: Properties
-    private let viewModel = HomeCoreDataViewModel()
+    private let viewModel = CoreDataViewModel()
 
     /// MARK: System
     override func viewDidLoad() {
@@ -40,6 +40,8 @@ class HomeCoreDataViewController: UIViewController {
 
     /// MARK: Functions
     private func setupUI() {
+        title = "CoreData"
+
         view.backgroundColor = .white
 
         view.addSubview(tableViewTask)

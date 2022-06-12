@@ -8,6 +8,13 @@
 import UIKit
 
 extension UIViewController {
+    func clearBackButtonTitle() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                           style: .plain,
+                                                           target: nil,
+                                                           action: nil)
+    }
+
     func removeObservers() {
         NotificationCenter.default.removeObserver(self)
     }
