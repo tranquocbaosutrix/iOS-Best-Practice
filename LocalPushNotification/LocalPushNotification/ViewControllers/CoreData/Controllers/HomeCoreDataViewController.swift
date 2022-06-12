@@ -28,6 +28,7 @@ class HomeCoreDataViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        observeKeyboard()
         observeViewModel()
     }
 
@@ -56,6 +57,16 @@ class HomeCoreDataViewController: UIViewController {
     private func observeViewModel() {
         viewModel.reloadTaskList = { [weak self] in
             self?.tableViewTask.reloadData()
+        }
+    }
+
+    private func observeKeyboard() {
+        Utils.observeKeyboardWillHideNotification(tableViewTask) { keyboardSize in
+            print("Keyboard will hide")
+        }
+
+        Utils.observeKeyboardWillShowNotification(tableViewTask) { keyboardSize in
+            print("Keyboard will show")
         }
     }
 
