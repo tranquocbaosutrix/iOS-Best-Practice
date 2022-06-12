@@ -10,8 +10,8 @@ import UIKit
 extension UITableView {
     func dequeueReusableCell<T: UITableViewCell>(ofType type: T.Type,
                                                         for indexPath: IndexPath) -> T {
-        guard let cell = dequeueReusableCell(withIdentifier: "\(T.self)", for: indexPath) as? T else {
-            fatalError("Couldn't find UITableViewCell of class \(T.self)")
+        guard let cell = dequeueReusableCell(withIdentifier: T.className, for: indexPath) as? T else {
+            fatalError("Couldn't find UITableViewCell of class \(T.className)")
         }
 
         return cell

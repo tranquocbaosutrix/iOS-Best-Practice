@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
 //        tableView.contentInsetAdjustmentBehavior = .never
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(CaseStudyUITableViewCell.self, forCellReuseIdentifier: "\(CaseStudyUITableViewCell.self)")
+        tableView.register(CaseStudyUITableViewCell.self, forCellReuseIdentifier: CaseStudyUITableViewCell.className)
         
         return tableView
     }()

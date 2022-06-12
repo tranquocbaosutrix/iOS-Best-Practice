@@ -15,7 +15,7 @@ class HomeCoreDataViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(NewTaskUITableViewCell.self, forCellReuseIdentifier: "\(NewTaskUITableViewCell.self)")
+        tableView.register(NewTaskUITableViewCell.self, forCellReuseIdentifier: NewTaskUITableViewCell.className)
 
         return tableView
     }()

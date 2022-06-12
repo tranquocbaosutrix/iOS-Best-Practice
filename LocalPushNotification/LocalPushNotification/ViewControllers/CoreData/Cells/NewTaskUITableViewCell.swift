@@ -56,7 +56,7 @@ class NewTaskUITableViewCell: UITableViewCell {
                                              constant: padding16),
             labelTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor,
                                               constant: -padding16),
-            
+
             labelSubTitle.leftAnchor.constraint(equalTo: labelTitle.leftAnchor),
             labelSubTitle.rightAnchor.constraint(equalTo: labelTitle.rightAnchor),
             labelSubTitle.topAnchor.constraint(equalTo: labelTitle.bottomAnchor,
