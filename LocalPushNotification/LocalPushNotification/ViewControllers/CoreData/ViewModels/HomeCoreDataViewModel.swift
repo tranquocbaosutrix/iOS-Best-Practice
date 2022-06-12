@@ -27,6 +27,10 @@ class HomeCoreDataViewModel {
     var reloadTaskList: (() -> ())?
 
     /// MARK: Functions
+    func scrollToIndexIfNeeded() -> Bool {
+        return !taskList.isEmpty
+    }
+
     func indexPathForScrolling(_ showingKeyboard: Bool) -> IndexPath {
         if showingKeyboard {
             return IndexPath(row: taskList.count - 1,

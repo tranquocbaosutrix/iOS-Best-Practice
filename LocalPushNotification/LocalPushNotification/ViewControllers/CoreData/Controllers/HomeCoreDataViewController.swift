@@ -15,7 +15,8 @@ class HomeCoreDataViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(NewTaskUITableViewCell.self, forCellReuseIdentifier: NewTaskUITableViewCell.className)
+        tableView.register(NewTaskUITableViewCell.self,
+                           forCellReuseIdentifier: NewTaskUITableViewCell.className)
 
         return tableView
     }()
@@ -61,11 +62,14 @@ class HomeCoreDataViewController: UIViewController {
         }
     }
 
-    override func animateConstraints(withKeyboardHeight keyboardHeight: CGFloat, showingKeyboard: Bool) {
-        tableViewTask.setContentInsetAndScrollIndicatorInsets(showingKeyboard ? keyboardHeight : 0)
-        tableViewTask.scrollToRow(at: viewModel.indexPathForScrolling(showingKeyboard),
-                                  at: .bottom,
-                                  animated: true)
+    override func animateConstraints(withKeyboardHeight keyboardHeight: CGFloat,
+                                     showingKeyboard: Bool) {
+        if viewModel.scrollToIndexIfNeeded() {
+            tableViewTask.setContentInsetAndScrollIndicatorInsets(showingKeyboard ? keyboardHeight : 0)
+            tableViewTask.scrollToRow(at: viewModel.indexPathForScrolling(showingKeyboard),
+                                      at: .bottom,
+                                      animated: true)
+        }
     }
 
     @objc private func addNewTask() {
@@ -105,12 +109,15 @@ extension HomeCoreDataViewController: UITableViewDataSource {
         return 1
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return viewModel.currentTaskList.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(ofType: NewTaskUITableViewCell.self, for: indexPath)
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(ofType: NewTaskUITableViewCell.self,
+                                                 for: indexPath)
         let index = indexPath.row
         cell.labelTitle.text = viewModel.taskName(at: index)
         cell.labelSubTitle.text = viewModel.taskCreatedDate(at: index)
@@ -123,7 +130,9 @@ extension HomeCoreDataViewController: UITableViewDataSource {
 /// MARK: Extensions
 extension HomeCoreDataViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             viewModel.deleteExistingTask(at: indexPath)
         }

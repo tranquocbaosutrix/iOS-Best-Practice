@@ -18,7 +18,8 @@ class HomeViewController: UIViewController {
 //        tableView.contentInsetAdjustmentBehavior = .never
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(CaseStudyUITableViewCell.self, forCellReuseIdentifier: CaseStudyUITableViewCell.className)
+        tableView.register(CaseStudyUITableViewCell.self,
+                           forCellReuseIdentifier: CaseStudyUITableViewCell.className)
         
         return tableView
     }()
@@ -109,7 +110,8 @@ extension HomeViewController: UITableViewDataSource {
 /// MARK: Extensions
 extension HomeViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
         let caseStudy = viewModel.currentCaseStudyList[indexPath.row]
 
         guard let destinationViewController = viewModel.destinationViewController(caseStudy) else { return }
