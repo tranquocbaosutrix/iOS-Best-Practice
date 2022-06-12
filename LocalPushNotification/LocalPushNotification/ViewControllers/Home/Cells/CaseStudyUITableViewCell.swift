@@ -86,14 +86,14 @@ class CaseStudyUITableViewCell: UITableViewCell {
         ])
         
         /// Layout UI (the third way) by using SnapKit
-                labelTitle.snp.makeConstraints { make in
-                    make.left.top.right.equalToSuperview().inset(padding16)
-                }
-
-                labelSubtitle.snp.makeConstraints { make in
-                    make.top.equalTo(labelTitle.snp.bottom).offset(padding8)
-                    make.left.right.bottom.equalToSuperview().inset(padding16)
-                }
+//        labelTitle.snp.makeConstraints { make in
+//            make.left.top.right.equalToSuperview().inset(padding16)
+//        }
+//
+//        labelSubtitle.snp.makeConstraints { make in
+//            make.top.equalTo(labelTitle.snp.bottom).offset(padding8)
+//            make.left.right.bottom.equalToSuperview().inset(padding16)
+//        }
     }
     
 }

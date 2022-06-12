@@ -27,6 +27,16 @@ class HomeCoreDataViewModel {
     var reloadTaskList: (() -> ())?
 
     /// MARK: Functions
+    func indexPathForScrolling(_ showingKeyboard: Bool) -> IndexPath {
+        if showingKeyboard {
+            return IndexPath(row: taskList.count - 1,
+                             section: 0)
+        } else {
+            return IndexPath(row: 0,
+                             section: 0)
+        }
+    }
+
     func taskName(at index: Int) -> String {
         return currentTaskList[index].name
     }
@@ -36,7 +46,7 @@ class HomeCoreDataViewModel {
     }
 
     func saveNewTask(_ task: String?) {
-        guard let task = task else { return }
+        guard let task = task, !task.isEmpty else { return }
 
         let now = Date()
 

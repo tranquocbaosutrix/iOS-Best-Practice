@@ -25,6 +25,7 @@
 		E27C482F2855B29300ABB445 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C482E2855B29300ABB445 /* TaskModel.swift */; };
 		E27C48372855C51F00ABB445 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C48362855C51F00ABB445 /* NSObject+Extensions.swift */; };
 		E27C48392855C66600ABB445 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C48382855C66600ABB445 /* UIScrollView+Extensions.swift */; };
+		E27C483C2855F51300ABB445 /* CallKitHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C483B2855F51300ABB445 /* CallKitHomeViewController.swift */; };
 		E293D79E2851F46500269F79 /* MyCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E293D79C2851F46500269F79 /* MyCoreData.xcdatamodeld */; };
 		E293D7A12851F49D00269F79 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293D7A02851F49D00269F79 /* CoreDataManager.swift */; };
 		E293D7A42851F59300269F79 /* HomeCoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293D7A32851F59300269F79 /* HomeCoreDataViewController.swift */; };
@@ -60,6 +61,7 @@
 		E27C482E2855B29300ABB445 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		E27C48362855C51F00ABB445 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		E27C48382855C66600ABB445 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
+		E27C483B2855F51300ABB445 /* CallKitHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitHomeViewController.swift; sourceTree = "<group>"; };
 		E293D79D2851F46500269F79 /* MyCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyCoreData.xcdatamodel; sourceTree = "<group>"; };
 		E293D7A02851F49D00269F79 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E293D7A32851F59300269F79 /* HomeCoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoreDataViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				E215BF5628474AA4000B4570 /* Home */,
+				E27C483A2855F4F600ABB445 /* CallKit */,
 				E293D7A22851F57600269F79 /* CoreData */,
 			);
 			path = ViewControllers;
@@ -233,6 +236,14 @@
 				E26915182853B63A005925B4 /* NewTaskUITableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E27C483A2855F4F600ABB445 /* CallKit */ = {
+			isa = PBXGroup;
+			children = (
+				E27C483B2855F51300ABB445 /* CallKitHomeViewController.swift */,
+			);
+			path = CallKit;
 			sourceTree = "<group>";
 		};
 		E293D79B2851F43000269F79 /* CoreData */ = {
@@ -416,6 +427,7 @@
 				E215BF5828474AB2000B4570 /* HomeViewModel.swift in Sources */,
 				E215BF3628472B92000B4570 /* AppDelegate.swift in Sources */,
 				E2C6A4462853379B005682FA /* UIView+Extensions.swift in Sources */,
+				E27C483C2855F51300ABB445 /* CallKitHomeViewController.swift in Sources */,
 				E2A3E3882848A4A60029BD27 /* MainNotificationManager.swift in Sources */,
 				E215BF4B28472D90000B4570 /* HomeViewController.swift in Sources */,
 				E293D7A12851F49D00269F79 /* CoreDataManager.swift in Sources */,

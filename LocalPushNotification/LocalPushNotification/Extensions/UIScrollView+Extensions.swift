@@ -14,4 +14,16 @@ extension UIScrollView {
         scrollIndicatorInsets = edgeInsets
     }
 
+    func setContentInsetAndScrollIndicatorInsets(_ height: CGFloat) {
+        let contentInsets = UIEdgeInsets(
+            top: contentInset.top,
+            left: contentInset.left,
+            bottom: height,
+            right: contentInset.right
+
+        )
+
+        setContentInsetAndScrollIndicatorInsets(contentInsets)
+    }
+
 }

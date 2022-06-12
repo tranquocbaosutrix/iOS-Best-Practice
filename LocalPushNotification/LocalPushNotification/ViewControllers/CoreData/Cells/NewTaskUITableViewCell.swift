@@ -12,6 +12,7 @@ class NewTaskUITableViewCell: UITableViewCell {
     ///MARK: UI Properties
     lazy var labelTitle: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
@@ -19,6 +20,7 @@ class NewTaskUITableViewCell: UITableViewCell {
     lazy var labelSubTitle: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12.0)
+        label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
@@ -45,9 +47,6 @@ class NewTaskUITableViewCell: UITableViewCell {
 
         let padding8 = 8.0.asDesigned
         let padding16 = 16.0.asDesigned
-
-        labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelSubTitle.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             labelTitle.topAnchor.constraint(equalTo: contentView.topAnchor,

@@ -28,11 +28,12 @@ class HomeCoreDataViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        observeKeyboard()
+        registerForKeyboardNotifications()
         observeViewModel()
     }
 
     deinit {
+        removeObservers()
         print("HomeCoreDataViewController was destroyed")
     }
 
@@ -60,14 +61,11 @@ class HomeCoreDataViewController: UIViewController {
         }
     }
 
-    private func observeKeyboard() {
-        Utils.observeKeyboardWillHideNotification(tableViewTask) { keyboardSize in
-            print("Keyboard will hide")
-        }
-
-        Utils.observeKeyboardWillShowNotification(tableViewTask) { keyboardSize in
-            print("Keyboard will show")
-        }
+    override func animateConstraints(withKeyboardHeight keyboardHeight: CGFloat, showingKeyboard: Bool) {
+        tableViewTask.setContentInsetAndScrollIndicatorInsets(showingKeyboard ? keyboardHeight : 0)
+        tableViewTask.scrollToRow(at: viewModel.indexPathForScrolling(showingKeyboard),
+                                  at: .bottom,
+                                  animated: true)
     }
 
     @objc private func addNewTask() {
