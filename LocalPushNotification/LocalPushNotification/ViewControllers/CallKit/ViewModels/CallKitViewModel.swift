@@ -41,7 +41,8 @@ class CallKitViewModel {
     }
 
     func callName(at index: Int) -> String {
-        return CallManager.shared.calls[index].handle
+        let call = CallManager.shared.calls[index]
+        return "\(call.outgoing ? "Outgoing Call: " : "Incoming Call: ") \(call.handle)"
     }
 
     func callStatus(at index: Int) -> String {
