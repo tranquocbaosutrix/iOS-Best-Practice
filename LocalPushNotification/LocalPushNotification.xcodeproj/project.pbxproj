@@ -38,10 +38,36 @@
 		E2A3E3882848A4A60029BD27 /* MainNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A3E3872848A4A60029BD27 /* MainNotificationManager.swift */; };
 		E2AEDD9F2857341D004A4CF1 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AEDD9E2857341D004A4CF1 /* AudioManager.swift */; };
 		E2AEDDA22857479E004A4CF1 /* CallUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AEDDA12857479E004A4CF1 /* CallUITableViewCell.swift */; };
+		E2BCAD772857AB39001E49E2 /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCAD762857AB39001E49E2 /* CallDirectoryHandler.swift */; };
+		E2BCAD7B2857AB39001E49E2 /* BestPracticeDirectory.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2BCAD742857AB39001E49E2 /* BestPracticeDirectory.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E2C1A0602847D728007A049A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C1A05F2847D728007A049A /* LocationManager.swift */; };
 		E2C6A4462853379B005682FA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6A4452853379B005682FA /* UIView+Extensions.swift */; };
 		E2C6A4482853420C005682FA /* Number+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6A4472853420C005682FA /* Number+Extensions.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2BCAD792857AB39001E49E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E215BF2A28472B91000B4570 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2BCAD732857AB39001E49E2;
+			remoteInfo = BestPracticeDirectory;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E2BCAD7C2857AB39001E49E2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E2BCAD7B2857AB39001E49E2 /* BestPracticeDirectory.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6EF784C9BD69DAFCB646D66F /* Pods-LocalPushNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalPushNotification.release.xcconfig"; path = "Target Support Files/Pods-LocalPushNotification/Pods-LocalPushNotification.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +106,9 @@
 		E2A3E3872848A4A60029BD27 /* MainNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNotificationManager.swift; sourceTree = "<group>"; };
 		E2AEDD9E2857341D004A4CF1 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		E2AEDDA12857479E004A4CF1 /* CallUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallUITableViewCell.swift; sourceTree = "<group>"; };
+		E2BCAD742857AB39001E49E2 /* BestPracticeDirectory.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BestPracticeDirectory.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2BCAD762857AB39001E49E2 /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
+		E2BCAD782857AB39001E49E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2C1A05F2847D728007A049A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E2C6A4452853379B005682FA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E2C6A4472853420C005682FA /* Number+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extensions.swift"; sourceTree = "<group>"; };
@@ -91,6 +120,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				04FD5C3B5D7841261619F370 /* Pods_LocalPushNotification.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2BCAD712857AB39001E49E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				E215BF3428472B92000B4570 /* LocalPushNotification */,
+				E2BCAD752857AB39001E49E2 /* BestPracticeDirectory */,
 				E215BF3328472B92000B4570 /* Products */,
 				9D128BAD1E5BDAC74C876244 /* Pods */,
 				F554789353C0D26581CBDB38 /* Frameworks */,
@@ -120,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E215BF3228472B92000B4570 /* LocalPushNotification.app */,
+				E2BCAD742857AB39001E49E2 /* BestPracticeDirectory.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -342,6 +380,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		E2BCAD752857AB39001E49E2 /* BestPracticeDirectory */ = {
+			isa = PBXGroup;
+			children = (
+				E2BCAD762857AB39001E49E2 /* CallDirectoryHandler.swift */,
+				E2BCAD782857AB39001E49E2 /* Info.plist */,
+			);
+			path = BestPracticeDirectory;
+			sourceTree = "<group>";
+		};
 		F554789353C0D26581CBDB38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,15 +409,34 @@
 				E215BF2F28472B92000B4570 /* Frameworks */,
 				E215BF3028472B92000B4570 /* Resources */,
 				7A350D59FC0751D568A6F6D4 /* [CP] Embed Pods Frameworks */,
+				E2BCAD7C2857AB39001E49E2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E2BCAD7A2857AB39001E49E2 /* PBXTargetDependency */,
 			);
 			name = LocalPushNotification;
 			productName = LocalPushNotification;
 			productReference = E215BF3228472B92000B4570 /* LocalPushNotification.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E2BCAD732857AB39001E49E2 /* BestPracticeDirectory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2BCAD7F2857AB39001E49E2 /* Build configuration list for PBXNativeTarget "BestPracticeDirectory" */;
+			buildPhases = (
+				E2BCAD702857AB39001E49E2 /* Sources */,
+				E2BCAD712857AB39001E49E2 /* Frameworks */,
+				E2BCAD722857AB39001E49E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BestPracticeDirectory;
+			productName = BestPracticeDirectory;
+			productReference = E2BCAD742857AB39001E49E2 /* BestPracticeDirectory.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -379,11 +445,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					E215BF3128472B92000B4570 = {
 						CreatedOnToolsVersion = 13.3;
+					};
+					E2BCAD732857AB39001E49E2 = {
+						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
@@ -401,6 +470,7 @@
 			projectRoot = "";
 			targets = (
 				E215BF3128472B92000B4570 /* LocalPushNotification */,
+				E2BCAD732857AB39001E49E2 /* BestPracticeDirectory */,
 			);
 		};
 /* End PBXProject section */
@@ -412,6 +482,13 @@
 			files = (
 				E215BF4228472B93000B4570 /* LaunchScreen.storyboard in Resources */,
 				E215BF3F28472B93000B4570 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2BCAD722857AB39001E49E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,7 +575,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E2BCAD702857AB39001E49E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2BCAD772857AB39001E49E2 /* CallDirectoryHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2BCAD7A2857AB39001E49E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2BCAD732857AB39001E49E2 /* BestPracticeDirectory */;
+			targetProxy = E2BCAD792857AB39001E49E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E215BF4028472B93000B4570 /* LaunchScreen.storyboard */ = {
@@ -630,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4137066F95B90D1E765864D /* Pods-LocalPushNotification.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LocalPushNotification/LocalPushNotification.entitlements;
@@ -663,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6EF784C9BD69DAFCB646D66F /* Pods-LocalPushNotification.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LocalPushNotification/LocalPushNotification.entitlements;
@@ -692,6 +787,64 @@
 			};
 			name = Release;
 		};
+		E2BCAD7D2857AB39001E49E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VPSXKYA9Q2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BestPracticeDirectory/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BestPracticeDirectory;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BaoTran.LocalPushNotification.BestPracticeDirectory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2BCAD7E2857AB39001E49E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VPSXKYA9Q2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BestPracticeDirectory/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BestPracticeDirectory;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BaoTran.LocalPushNotification.BestPracticeDirectory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -709,6 +862,15 @@
 			buildConfigurations = (
 				E215BF4728472B93000B4570 /* Debug */,
 				E215BF4828472B93000B4570 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2BCAD7F2857AB39001E49E2 /* Build configuration list for PBXNativeTarget "BestPracticeDirectory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2BCAD7D2857AB39001E49E2 /* Debug */,
+				E2BCAD7E2857AB39001E49E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

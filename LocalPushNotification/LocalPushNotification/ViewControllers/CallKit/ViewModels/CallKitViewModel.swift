@@ -31,9 +31,16 @@ class CallKitViewModel {
     }
 
     func checkPhoneInput(_ phone: String?) {
+//        if let phone = phone,
+//            !phone.isEmpty,
+//            Utils.isValidPhone(phone: phone) {
+//            makeNewCall?(phone)
+//        } else {
+//            makeNewCall?("Anonymous Call...")
+//        }
+
         if let phone = phone,
-            !phone.isEmpty,
-            Utils.isValidPhone(phone: phone) {
+            !phone.isEmpty {
             makeNewCall?(phone)
         } else {
             makeNewCall?("Anonymous Call...")
@@ -71,6 +78,6 @@ class CallKitViewModel {
     }
 
     func makeOutgoingCall() {
-        ProviderDelegate.shared.startCall(handle: "Random outgoing call", videoEnabled: false)
+        ProviderDelegate.shared.startCall(handle: "1111", videoEnabled: false)
     }
 }
