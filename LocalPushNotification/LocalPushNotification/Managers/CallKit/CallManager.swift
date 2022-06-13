@@ -19,6 +19,8 @@ class CallManager {
     /// MARK: Properties
     var callsChangedHandler: (() -> ())?
 
+    private let callController = CXCallController()
+
     private(set) var calls: [Call] = []
 
     /// MARK: Functions
@@ -48,5 +50,30 @@ class CallManager {
     func removeAllCalls() {
         calls.removeAll()
         callsChangedHandler?()
+    }
+
+    private func requestTransaction(_ transaction: CXTransaction) {
+        callController.request(transaction) { error in
+            if let error = error {
+                print("Requesting transaction failed with \(error.localizedDescription)")
+            } else {
+                print("Requested transaction successfully")
+            }
+        }
+    }
+
+    func end(call: Call) {
+        let endCallAction = CXEndCallAction(call: call.uuid)
+        let transaction = CXTransaction(action: endCallAction)
+
+        requestTransaction(transaction)
+    }
+
+    func setHeld(call: Call, onHold: Bool) {
+        let setHeldCallAction = CXSetHeldCallAction(call: call.uuid, onHold: onHold)
+        let transaction = CXTransaction(action: setHeldCallAction)
+        transaction.addAction(setHeldCallAction)
+
+        requestTransaction(transaction)
     }
 }

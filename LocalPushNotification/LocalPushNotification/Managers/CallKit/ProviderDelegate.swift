@@ -101,4 +101,21 @@ extension ProviderDelegate: CXProviderDelegate {
         CallManager.shared.remove(call: call)
     }
 
+    func provider(_ provider: CXProvider, perform action: CXSetHeldCallAction) {
+        guard let call = CallManager.shared.callWithUUID(uuid: action.callUUID) else {
+            action.fail()
+            return
+        }
+
+        call.state = action.isOnHold ? .held : .active
+
+        if call.state == .held {
+            AudioManager.shared.stopAudio()
+        } else {
+            AudioManager.shared.startAudio()
+        }
+
+        action.fulfill()
+    }
+
 }

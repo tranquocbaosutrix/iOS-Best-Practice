@@ -68,8 +68,7 @@ class CallKitHomeViewController: UIViewController {
 
         let saveAction = UIAlertAction(title: "Call now",
                                        style: .default) { [weak self] _ in
-            guard let phoneNumber = alert.textFields?.first?.text else { return }
-            self?.displayIncomingCall(handle: phoneNumber)
+            self?.viewModel.checkPhoneInput(alert.textFields?.first?.text)
         }
 
         let cancelAction = UIAlertAction(title: "Cancel",
@@ -102,8 +101,12 @@ class CallKitHomeViewController: UIViewController {
     }
 
     private func observeCalls() {
-        CallManager.shared.callsChangedHandler = { [weak self] in
+        viewModel.reloadCallTableView = { [weak self] in
             self?.tableViewCalls.reloadData()
+        }
+
+        viewModel.makeNewCall = { [weak self] phoneNumber in
+            self?.displayIncomingCall(handle: phoneNumber)
         }
     }
 
@@ -122,7 +125,11 @@ extension CallKitHomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: CallUITableViewCell.self, for: indexPath)
-        cell.labelCallName.text = viewModel.callName(at: indexPath.row)
+
+        let index = indexPath.row
+        
+        cell.labelCallName.text = viewModel.callName(at: index)
+        cell.labelCallStatus.text = viewModel.callStatus(at: index)
 
         return cell
     }
@@ -134,8 +141,12 @@ extension CallKitHomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
+            viewModel.endCall(at: indexPath.row)
         }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.holdCall(at: indexPath.row)
     }
 
 }
