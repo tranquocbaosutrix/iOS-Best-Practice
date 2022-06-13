@@ -50,21 +50,25 @@ class CoreDataViewModel {
     }
 
     func saveNewTask(_ task: String?) {
-        guard let task = task, !task.isEmpty else { return }
+        guard let task = task else { return }
+
+        let tempTask = task.isEmpty ? "Anonymous task :]]" : task
 
         let now = Date()
 
         let newTask = TaskEntity(context: CoreDataManager.shared.managedContext())
 
-        newTask.setValue(task, forKey: TaskEntityKeyName.name.rawValue)
+        newTask.setValue(tempTask,
+                         forKey: TaskEntityKeyName.name.rawValue)
 
-        newTask.setValue(now, forKey: TaskEntityKeyName.createdDate.rawValue)
+        newTask.setValue(now,
+                         forKey: TaskEntityKeyName.createdDate.rawValue)
 
         CoreDataManager.shared.saveContext()
 
         taskManagedObjectList.append(newTask)
 
-        taskList.append(TaskModel(name: task,
+        taskList.append(TaskModel(name: tempTask,
                                   createdDate: now))
 
         reloadTaskList?()

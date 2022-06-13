@@ -51,8 +51,13 @@ class Call {
         completion?(true)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.state = .active
-            self.connectedState = .complete
+            self.state = .connecting
+            self.connectedState = .pending
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.state = .active
+                self.connectedState = .complete
+            }
         }
     }
 

@@ -68,4 +68,8 @@ class CallKitViewModel {
         call.state = call.state == .held ? .active : .held
         CallManager.shared.setHeld(call: call, onHold: call.state == .held)
     }
+
+    func makeOutgoingCall() {
+        ProviderDelegate.shared.startCall(handle: "Random outgoing call", videoEnabled: false)
+    }
 }

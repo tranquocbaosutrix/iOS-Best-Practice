@@ -15,9 +15,23 @@ class CallKitHomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(CallUITableViewCell.self, forCellReuseIdentifier: CallUITableViewCell.className)
+        tableView.register(CallUITableViewCell.self,
+                           forCellReuseIdentifier: CallUITableViewCell.className)
 
         return tableView
+    }()
+
+    private lazy var buttonMakeOutgoingCall: UIButton = {
+        let button = UIButton()
+        button.addTarget(self,
+                         action: #selector(makeNewOutgoingCall),
+                         for: .touchUpInside)
+        button.setTitle("Make a new outgoing call", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .blue
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
     }()
 
     /// MARK: Properties
@@ -40,12 +54,19 @@ class CallKitHomeViewController: UIViewController {
         title = "CallKit"
 
         view.backgroundColor = .white
+
+        view.addSubview(buttonMakeOutgoingCall)
         view.addSubview(tableViewCalls)
 
         let guide = view.safeAreaLayoutGuide
 
         NSLayoutConstraint.activate([
-            tableViewCalls.topAnchor.constraint(equalTo: guide.topAnchor),
+            buttonMakeOutgoingCall.topAnchor.constraint(equalTo: guide.topAnchor),
+            buttonMakeOutgoingCall.leftAnchor.constraint(equalTo: view.leftAnchor),
+            buttonMakeOutgoingCall.rightAnchor.constraint(equalTo: view.rightAnchor),
+            buttonMakeOutgoingCall.heightAnchor.constraint(equalToConstant: 42.0.asDesigned),
+
+            tableViewCalls.topAnchor.constraint(equalTo: buttonMakeOutgoingCall.bottomAnchor),
             tableViewCalls.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableViewCalls.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableViewCalls.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
@@ -110,6 +131,10 @@ class CallKitHomeViewController: UIViewController {
         }
     }
 
+    @objc private func makeNewOutgoingCall() {
+        viewModel.makeOutgoingCall()
+    }
+
 }
 
 /// MARK: Extension
@@ -127,7 +152,7 @@ extension CallKitHomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(ofType: CallUITableViewCell.self, for: indexPath)
 
         let index = indexPath.row
-        
+
         cell.labelCallName.text = viewModel.callName(at: index)
         cell.labelCallStatus.text = viewModel.callStatus(at: index)
 

@@ -52,7 +52,7 @@ class CallManager {
         callsChangedHandler?()
     }
 
-    private func requestTransaction(_ transaction: CXTransaction) {
+    func requestTransaction(_ transaction: CXTransaction) {
         callController.request(transaction) { error in
             if let error = error {
                 print("Requesting transaction failed with \(error.localizedDescription)")

@@ -54,6 +54,16 @@ class ProviderDelegate: NSObject {
             completion?(error)
         }
     }
+
+    func startCall(handle: String,
+                   videoEnabled: Bool) {
+        let handle = CXHandle(type: .phoneNumber, value: handle)
+        let startCallAction = CXStartCallAction(call: UUID(), handle: handle)
+        startCallAction.isVideo = videoEnabled
+        let transaction = CXTransaction(action: startCallAction)
+
+        CallManager.shared.requestTransaction(transaction)
+    }
 }
 
 /// MARK: Extensions
@@ -69,7 +79,8 @@ extension ProviderDelegate: CXProviderDelegate {
         CallManager.shared.removeAllCalls()
     }
 
-    func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+    func provider(_ provider: CXProvider,
+                  perform action: CXAnswerCallAction) {
         guard let call = CallManager.shared.callWithUUID(uuid: action.callUUID) else {
             action.fail()
             return
@@ -82,11 +93,13 @@ extension ProviderDelegate: CXProviderDelegate {
         action.fulfill()
     }
 
-    func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
+    func provider(_ provider: CXProvider,
+                  didActivate audioSession: AVAudioSession) {
         AudioManager.shared.startAudio()
     }
 
-    func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+    func provider(_ provider: CXProvider,
+                  perform action: CXEndCallAction) {
         guard let call = CallManager.shared.callWithUUID(uuid: action.callUUID) else {
             action.fail()
             return
@@ -101,7 +114,8 @@ extension ProviderDelegate: CXProviderDelegate {
         CallManager.shared.remove(call: call)
     }
 
-    func provider(_ provider: CXProvider, perform action: CXSetHeldCallAction) {
+    func provider(_ provider: CXProvider,
+                  perform action: CXSetHeldCallAction) {
         guard let call = CallManager.shared.callWithUUID(uuid: action.callUUID) else {
             action.fail()
             return
@@ -116,6 +130,38 @@ extension ProviderDelegate: CXProviderDelegate {
         }
 
         action.fulfill()
+    }
+
+    func provider(_ provider: CXProvider,
+                  perform action: CXStartCallAction) {
+        let call = Call(uuid: action.callUUID,
+                        outgoing: true,
+                        handle: action.handle.value)
+
+        AudioManager.shared.configureAudioSession()
+
+        call.connectedStateChanged = { [weak self, weak call] in
+            guard let call = call else { return }
+
+            if call.connectedState == .pending {
+                self?.provider.reportOutgoingCall(with: call.uuid,
+                                                  startedConnectingAt: nil)
+            } else if call.connectedState == .complete {
+                self?.provider.reportOutgoingCall(with: call.uuid,
+                                                  connectedAt: nil)
+            }
+        }
+
+        call.start { [weak call] success in
+            guard let call = call else { return }
+
+            if success {
+                action.fulfill()
+                CallManager.shared.add(call: call)
+            } else {
+                action.fail()
+            }
+        }
     }
 
 }
