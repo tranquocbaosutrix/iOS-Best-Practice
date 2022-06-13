@@ -14,9 +14,9 @@ class CoreDataViewModel {
     }
 
     /// MARK: Properties
-    private var taskList = [TaskModel]()
+    private(set) var taskList = [TaskModel]()
 
-    private var taskManagedObjectList = [NSManagedObject]()
+    private(set) var taskManagedObjectList = [NSManagedObject]()
 
     var currentTaskList: [TaskModel] {
         get {

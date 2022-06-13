@@ -16,10 +16,14 @@ protocol RemoteNotificationManagerProtocol {
 }
 
 class RemoteNotificationManager: RemoteNotificationManagerProtocol {
-    static let shared = RemoteNotificationManager()
 
+    ///MARK: Constructor
     private init() {}
 
+    /// MARK: Properties
+    static let shared = RemoteNotificationManager()
+
+    /// MARK: Functions
     func registerForRemoteNotifications() {
         DispatchQueue.main.async {
             UIApplication.shared.registerForRemoteNotifications()

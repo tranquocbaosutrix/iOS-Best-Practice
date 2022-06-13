@@ -12,7 +12,10 @@ class CallKitHomeViewController: UIViewController {
     /// MARK: UI Properties
     private lazy var tableViewCalls: UITableView = {
         let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(CallUITableViewCell.self, forCellReuseIdentifier: CallUITableViewCell.className)
 
         return tableView
     }()
@@ -25,6 +28,7 @@ class CallKitHomeViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        observeCalls()
     }
 
     deinit {
@@ -46,6 +50,92 @@ class CallKitHomeViewController: UIViewController {
             tableViewCalls.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableViewCalls.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
         ])
+
+        let addNewCallBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                      target: self,
+                                                      action: #selector(addNewCall))
+        navigationItem.rightBarButtonItem = addNewCallBarButtonItem
+    }
+
+    @objc private func addNewCall() {
+        showAddNewCallAlert()
+    }
+
+    private func showAddNewCallAlert() {
+        let alert = UIAlertController(title: "New Call",
+                                      message: "Add a new call",
+                                      preferredStyle: .alert)
+
+        let saveAction = UIAlertAction(title: "Call now",
+                                       style: .default) { [weak self] _ in
+            guard let phoneNumber = alert.textFields?.first?.text else { return }
+            self?.displayIncomingCall(handle: phoneNumber)
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .cancel)
+
+        alert.addTextField { textField in
+            textField.placeholder = "Please add your phone number"
+        }
+
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+
+        present(alert,
+                animated: true,
+                completion: nil)
+    }
+
+    private func displayIncomingCall(handle: String,
+                                     hasVideo: Bool = false) {
+
+        let backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            ProviderDelegate.shared.reportIncomingCall(uuid: UUID(),
+                                                       handle: handle,
+                                                       hasVideo: hasVideo) { _ in
+                UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+            }
+        }
+    }
+
+    private func observeCalls() {
+        CallManager.shared.callsChangedHandler = { [weak self] in
+            self?.tableViewCalls.reloadData()
+        }
+    }
+
+}
+
+/// MARK: Extension
+extension CallKitHomeViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.callCount
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(ofType: CallUITableViewCell.self, for: indexPath)
+        cell.labelCallName.text = viewModel.callName(at: indexPath.row)
+
+        return cell
+    }
+
+}
+
+/// MARK: Extension
+extension CallKitHomeViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+        }
     }
 
 }

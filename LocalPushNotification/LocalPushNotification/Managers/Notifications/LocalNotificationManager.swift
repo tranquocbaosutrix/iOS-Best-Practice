@@ -30,10 +30,14 @@ protocol LocalNotificationManagerProtocol {
 }
 
 class LocalNotificationManager: LocalNotificationManagerProtocol {
-    static let shared = LocalNotificationManager()
-
+    
+    /// MARK: Constructor
     private init() {}
 
+    /// MARK: Properties
+    static let shared = LocalNotificationManager()
+
+    /// MARK: Functions
     func sendTimeIntervalLocalNotification(_ title: String,
                                            _ body: String,
                                            _ subTitle: String = "",

@@ -9,10 +9,13 @@ import CoreLocation
 
 class LocationManager: AppPermissionManagerProtocol {
 
-    let shared = LocationManager()
-
+    ///MARK: Constructor
     private init() {}
 
+    /// MARK: Properties
+    static let shared = LocationManager()
+
+    /// MARK: Functions
     func appPermissionStatus(_ completion: @escaping ((AuthorizationStatus) -> ())) {
 
     }

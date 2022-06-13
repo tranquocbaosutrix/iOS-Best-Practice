@@ -12,13 +12,16 @@ protocol MainNotificationManagerProtocol {
 }
 
 class MainNotificationManager: NSObject, AppPermissionManagerProtocol {
-    static let shared = MainNotificationManager()
-
+    
+    /// MARK: Constructor
     private override init() {
         super.init()
 
         UNUserNotificationCenter.current().delegate = self
     }
+
+    /// MARK: Properties
+    static let shared = MainNotificationManager()
 
     func appPermissionStatus(_ completion: @escaping ((AuthorizationStatus) -> ())) {
         var status: AuthorizationStatus = .notDetermined
@@ -52,6 +55,7 @@ extension MainNotificationManager: MainNotificationManagerProtocol {
     }
 }
 
+/// MARK: Extensions
 extension MainNotificationManager: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,

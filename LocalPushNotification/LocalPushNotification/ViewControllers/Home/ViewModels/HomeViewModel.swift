@@ -27,7 +27,7 @@ class HomeViewModel {
 
     var dismissWarningAlert: (() -> ())?
 
-    private var caseStudyList = [CaseStudy]()
+    private(set) var caseStudyList = [CaseStudy]()
 
     var currentCaseStudyList: [CaseStudy] {
         get {

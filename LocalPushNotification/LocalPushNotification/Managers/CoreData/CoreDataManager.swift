@@ -18,12 +18,15 @@ enum TaskEntityKeyName: String {
 
 class CoreDataManager {
 
-    static var shared = CoreDataManager()
-
+    ///MARK: Constructor
     private init() {}
+
+    /// MARK: Properties
+    static var shared = CoreDataManager()
 
     private var containerName = "MyCoreData"
 
+    /// MARK: Functions
     func managedContext() -> NSManagedObjectContext {
         return persistentContainer.viewContext
     }
