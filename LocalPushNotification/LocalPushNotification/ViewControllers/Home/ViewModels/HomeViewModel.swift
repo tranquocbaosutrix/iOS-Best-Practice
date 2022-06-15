@@ -14,6 +14,7 @@ public enum CaseStudy: String, CaseIterable {
     case CallKit = "Practice CallKit"
     case AVKit = "Practice AVKit"
     case PDFKit = "Practice PDFKit"
+    case MVP = "Practice MVP"
 }
 
 class HomeViewModel {
@@ -42,6 +43,7 @@ class HomeViewModel {
         caseStudyList.append(.CallKit)
         caseStudyList.append(.AVKit)
         caseStudyList.append(.PDFKit)
+        caseStudyList.append(.MVP)
     }
 
     func checkNotificationAuthorizationStatus() {
@@ -84,6 +86,8 @@ class HomeViewModel {
             return nil
         case .PDFKit:
             return nil
+        case .MVP:
+            return TrafficLightViewController()
         }
     }
 

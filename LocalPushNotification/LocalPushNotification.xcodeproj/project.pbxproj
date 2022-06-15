@@ -18,12 +18,18 @@
 		E215BF5828474AB2000B4570 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215BF5728474AB2000B4570 /* HomeViewModel.swift */; };
 		E215BF5C284767A5000B4570 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215BF5B284767A5000B4570 /* UIViewController+Extensions.swift */; };
 		E215BF5E284771B7000B4570 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215BF5D284771B7000B4570 /* UIApplication+Extensions.swift */; };
+		E22DF7B328585DDE00753C52 /* LocalPushNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22DF7B228585DDE00753C52 /* LocalPushNotificationUITests.swift */; };
+		E22DF7B528585DDE00753C52 /* LocalPushNotificationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22DF7B428585DDE00753C52 /* LocalPushNotificationUITestsLaunchTests.swift */; };
 		E22F3D56285329040047CD21 /* CaseStudyUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F3D55285329040047CD21 /* CaseStudyUITableViewCell.swift */; };
 		E24274FC2856F375008F0D3D /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24274FB2856F375008F0D3D /* ProviderDelegate.swift */; };
 		E24274FF2856F4BE008F0D3D /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24274FE2856F4BE008F0D3D /* Call.swift */; };
 		E24275012856F6E2008F0D3D /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24275002856F6E2008F0D3D /* CallManager.swift */; };
 		E26915172853AEC4005925B4 /* CoreDataHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26915162853AEC4005925B4 /* CoreDataHomeViewModel.swift */; };
 		E26915192853B63A005925B4 /* NewTaskUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26915182853B63A005925B4 /* NewTaskUITableViewCell.swift */; };
+		E275B998285A1F5000B9133F /* TrafficLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E275B997285A1F5000B9133F /* TrafficLight.swift */; };
+		E275B99A285A1F5F00B9133F /* TrafficeLightPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E275B999285A1F5F00B9133F /* TrafficeLightPresenter.swift */; };
+		E275B99C285A1F7500B9133F /* TrafficLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E275B99B285A1F7500B9133F /* TrafficLightViewController.swift */; };
+		E275B99E285A1F8A00B9133F /* TrafficLightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E275B99D285A1F8A00B9133F /* TrafficLightService.swift */; };
 		E27C482C2855B02200ABB445 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C482B2855B02200ABB445 /* Date+Extensions.swift */; };
 		E27C482F2855B29300ABB445 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C482E2855B29300ABB445 /* TaskModel.swift */; };
 		E27C48372855C51F00ABB445 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C48362855C51F00ABB445 /* NSObject+Extensions.swift */; };
@@ -46,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E22DF7B628585DDE00753C52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E215BF2A28472B91000B4570 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E215BF3128472B92000B4570;
+			remoteInfo = LocalPushNotification;
+		};
 		E2BCAD792857AB39001E49E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E215BF2A28472B91000B4570 /* Project object */;
@@ -85,6 +98,9 @@
 		E215BF5728474AB2000B4570 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E215BF5B284767A5000B4570 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		E215BF5D284771B7000B4570 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		E22DF7B028585DDE00753C52 /* LocalPushNotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalPushNotificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E22DF7B228585DDE00753C52 /* LocalPushNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotificationUITests.swift; sourceTree = "<group>"; };
+		E22DF7B428585DDE00753C52 /* LocalPushNotificationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotificationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E22F3D55285329040047CD21 /* CaseStudyUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseStudyUITableViewCell.swift; sourceTree = "<group>"; };
 		E24175712848753000D36C9B /* LocalPushNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalPushNotification.entitlements; sourceTree = "<group>"; };
 		E24274FB2856F375008F0D3D /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +108,10 @@
 		E24275002856F6E2008F0D3D /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		E26915162853AEC4005925B4 /* CoreDataHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHomeViewModel.swift; sourceTree = "<group>"; };
 		E26915182853B63A005925B4 /* NewTaskUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskUITableViewCell.swift; sourceTree = "<group>"; };
+		E275B997285A1F5000B9133F /* TrafficLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLight.swift; sourceTree = "<group>"; };
+		E275B999285A1F5F00B9133F /* TrafficeLightPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficeLightPresenter.swift; sourceTree = "<group>"; };
+		E275B99B285A1F7500B9133F /* TrafficLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightViewController.swift; sourceTree = "<group>"; };
+		E275B99D285A1F8A00B9133F /* TrafficLightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightService.swift; sourceTree = "<group>"; };
 		E27C482B2855B02200ABB445 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		E27C482E2855B29300ABB445 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		E27C48362855C51F00ABB445 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -123,6 +143,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E22DF7AD28585DDE00753C52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2BCAD712857AB39001E49E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +174,7 @@
 			children = (
 				E215BF3428472B92000B4570 /* LocalPushNotification */,
 				E2BCAD752857AB39001E49E2 /* BestPracticeDirectory */,
+				E22DF7B128585DDE00753C52 /* LocalPushNotificationUITests */,
 				E215BF3328472B92000B4570 /* Products */,
 				9D128BAD1E5BDAC74C876244 /* Pods */,
 				F554789353C0D26581CBDB38 /* Frameworks */,
@@ -158,6 +186,7 @@
 			children = (
 				E215BF3228472B92000B4570 /* LocalPushNotification.app */,
 				E2BCAD742857AB39001E49E2 /* BestPracticeDirectory.appex */,
+				E22DF7B028585DDE00753C52 /* LocalPushNotificationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +200,7 @@
 				E215BF4D28472DCB000B4570 /* Utils */,
 				E215BF4C28472DBF000B4570 /* Extensions */,
 				E215BF4928472BAC000B4570 /* ViewControllers */,
+				E275B992285A1EF500B9133F /* MVP */,
 				E215BF3528472B92000B4570 /* AppDelegate.swift */,
 				E215BF3E28472B93000B4570 /* Assets.xcassets */,
 				E215BF4028472B93000B4570 /* LaunchScreen.storyboard */,
@@ -231,6 +261,58 @@
 				E27C48302855C02C00ABB445 /* ViewModels */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E22DF7B128585DDE00753C52 /* LocalPushNotificationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E22DF7B228585DDE00753C52 /* LocalPushNotificationUITests.swift */,
+				E22DF7B428585DDE00753C52 /* LocalPushNotificationUITestsLaunchTests.swift */,
+			);
+			path = LocalPushNotificationUITests;
+			sourceTree = "<group>";
+		};
+		E275B992285A1EF500B9133F /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				E275B995285A1F2500B9133F /* Views */,
+				E275B993285A1F0600B9133F /* Models */,
+				E275B996285A1F2D00B9133F /* Presenters */,
+				E275B994285A1F1200B9133F /* DataSource */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		E275B993285A1F0600B9133F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E275B997285A1F5000B9133F /* TrafficLight.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E275B994285A1F1200B9133F /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				E275B99D285A1F8A00B9133F /* TrafficLightService.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		E275B995285A1F2500B9133F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E275B99B285A1F7500B9133F /* TrafficLightViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E275B996285A1F2D00B9133F /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				E275B999285A1F5F00B9133F /* TrafficeLightPresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		E27C482D2855B28800ABB445 /* Model */ = {
@@ -421,6 +503,24 @@
 			productReference = E215BF3228472B92000B4570 /* LocalPushNotification.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E22DF7AF28585DDE00753C52 /* LocalPushNotificationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E22DF7BA28585DDE00753C52 /* Build configuration list for PBXNativeTarget "LocalPushNotificationUITests" */;
+			buildPhases = (
+				E22DF7AC28585DDE00753C52 /* Sources */,
+				E22DF7AD28585DDE00753C52 /* Frameworks */,
+				E22DF7AE28585DDE00753C52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E22DF7B728585DDE00753C52 /* PBXTargetDependency */,
+			);
+			name = LocalPushNotificationUITests;
+			productName = LocalPushNotificationUITests;
+			productReference = E22DF7B028585DDE00753C52 /* LocalPushNotificationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		E2BCAD732857AB39001E49E2 /* BestPracticeDirectory */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2BCAD7F2857AB39001E49E2 /* Build configuration list for PBXNativeTarget "BestPracticeDirectory" */;
@@ -451,6 +551,10 @@
 					E215BF3128472B92000B4570 = {
 						CreatedOnToolsVersion = 13.3;
 					};
+					E22DF7AF28585DDE00753C52 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = E215BF3128472B92000B4570;
+					};
 					E2BCAD732857AB39001E49E2 = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -471,6 +575,7 @@
 			targets = (
 				E215BF3128472B92000B4570 /* LocalPushNotification */,
 				E2BCAD732857AB39001E49E2 /* BestPracticeDirectory */,
+				E22DF7AF28585DDE00753C52 /* LocalPushNotificationUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -482,6 +587,13 @@
 			files = (
 				E215BF4228472B93000B4570 /* LaunchScreen.storyboard in Resources */,
 				E215BF3F28472B93000B4570 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E22DF7AE28585DDE00753C52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,19 +654,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				E24274FC2856F375008F0D3D /* ProviderDelegate.swift in Sources */,
+				E275B99A285A1F5F00B9133F /* TrafficeLightPresenter.swift in Sources */,
 				E293D7A62851FADE00269F79 /* UITableView+Extensions.swift in Sources */,
 				E27C48402856098900ABB445 /* CallKitViewModel.swift in Sources */,
 				E215BF5E284771B7000B4570 /* UIApplication+Extensions.swift in Sources */,
+				E275B998285A1F5000B9133F /* TrafficLight.swift in Sources */,
 				E27C482C2855B02200ABB445 /* Date+Extensions.swift in Sources */,
 				E24274FF2856F4BE008F0D3D /* Call.swift in Sources */,
 				E27C48392855C66600ABB445 /* UIScrollView+Extensions.swift in Sources */,
 				E215BF55284748A2000B4570 /* AppPermissionProtocol.swift in Sources */,
+				E275B99C285A1F7500B9133F /* TrafficLightViewController.swift in Sources */,
 				E27C48372855C51F00ABB445 /* NSObject+Extensions.swift in Sources */,
 				E27C482F2855B29300ABB445 /* TaskModel.swift in Sources */,
 				E2A3E38228487D4F0029BD27 /* LocalNotificationManager.swift in Sources */,
 				E2C6A4482853420C005682FA /* Number+Extensions.swift in Sources */,
 				E26915192853B63A005925B4 /* NewTaskUITableViewCell.swift in Sources */,
 				E215BF5828474AB2000B4570 /* HomeViewModel.swift in Sources */,
+				E275B99E285A1F8A00B9133F /* TrafficLightService.swift in Sources */,
 				E2AEDDA22857479E004A4CF1 /* CallUITableViewCell.swift in Sources */,
 				E215BF3628472B92000B4570 /* AppDelegate.swift in Sources */,
 				E24275012856F6E2008F0D3D /* CallManager.swift in Sources */,
@@ -575,6 +691,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E22DF7AC28585DDE00753C52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E22DF7B328585DDE00753C52 /* LocalPushNotificationUITests.swift in Sources */,
+				E22DF7B528585DDE00753C52 /* LocalPushNotificationUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E2BCAD702857AB39001E49E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +711,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E22DF7B728585DDE00753C52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E215BF3128472B92000B4570 /* LocalPushNotification */;
+			targetProxy = E22DF7B628585DDE00753C52 /* PBXContainerItemProxy */;
+		};
 		E2BCAD7A2857AB39001E49E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E2BCAD732857AB39001E49E2 /* BestPracticeDirectory */;
@@ -787,6 +917,54 @@
 			};
 			name = Release;
 		};
+		E22DF7B828585DDE00753C52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VPSXKYA9Q2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BaoTran.LocalPushNotificationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LocalPushNotification;
+			};
+			name = Debug;
+		};
+		E22DF7B928585DDE00753C52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VPSXKYA9Q2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BaoTran.LocalPushNotificationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LocalPushNotification;
+			};
+			name = Release;
+		};
 		E2BCAD7D2857AB39001E49E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -862,6 +1040,15 @@
 			buildConfigurations = (
 				E215BF4728472B93000B4570 /* Debug */,
 				E215BF4828472B93000B4570 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E22DF7BA28585DDE00753C52 /* Build configuration list for PBXNativeTarget "LocalPushNotificationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E22DF7B828585DDE00753C52 /* Debug */,
+				E22DF7B928585DDE00753C52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
