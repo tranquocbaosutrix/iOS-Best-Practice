@@ -97,31 +97,15 @@ extension UIViewController {
     
     @objc func animateConstraints(withKeyboardHeight keyboardHeight: CGFloat, showingKeyboard: Bool) { }
     
-    func showAlertGoToSettings(title: String,
-                               message: String) {
-
-        DispatchQueue.main.async { [weak self] in
-            let controller = UIApplication.topViewControllerInNavigationStack()
-
-            let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
-
-                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                    return
-                }
-
-                if UIApplication.shared.canOpenURL(settingsUrl) {
-                    UIApplication.shared.open(settingsUrl) { success in
-                        print("Settings opened: \(success)")
-                    }
-                }
-
-            }
-
-            self?.showAlert(controller,
-                      title: title,
-                      message: message,
-                      actions: [settingsAction])
+    func presentWithTopViewController(_ viewController: UIViewController?,
+                                      animated: Bool = true,
+                                      completion: (() -> ())? = nil) {
+        guard let viewController = viewController else {
+            return
         }
 
+        UIApplication.topViewControllerInNavigationStack()?.present(viewController,
+                                                                    animated: animated,
+                                                                    completion: completion)
     }
 }

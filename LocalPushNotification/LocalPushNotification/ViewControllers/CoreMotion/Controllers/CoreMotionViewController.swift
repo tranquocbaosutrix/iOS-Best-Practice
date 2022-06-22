@@ -56,20 +56,10 @@ class CoreMotionViewController: UIViewController {
                                                selector: #selector(checkMotionPermission),
                                                name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(hideExistingAlert),
-                                               name: UIApplication.willResignActiveNotification,
-                                               object: nil)
     }
 
     @objc private func checkMotionPermission() {
         viewModel.checkMotionAuthorizationStatus()
-    }
-
-    @objc private func hideExistingAlert() {
-        print("Hide existing alert")
-        dismissAllPresentedAlertViewController()
     }
 
 }

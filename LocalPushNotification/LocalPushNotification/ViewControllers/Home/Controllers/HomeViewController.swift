@@ -60,37 +60,19 @@ class HomeViewController: UIViewController {
 
     private func showAlertGoToSettings() {
         DispatchQueue.main.async { [weak self] in
-            let settingsAction = UIAlertAction(title: "Settings",
-                                               style: .default) { _ in
-
-                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                    return
-                }
-
-                if UIApplication.shared.canOpenURL(settingsUrl) {
-                    UIApplication.shared.open(settingsUrl) { success in
-                        print("Settings opened: \(success)")
-                    }
-                }
-
-            }
-
             self?.alertGoToSettings = UIAlertController(title: "Notice",
                                                         message: "Notification is turned off. Please turn on it to continue using this app.",
                                                         preferredStyle: .alert)
 
-            self?.alertGoToSettings?.addAction(settingsAction)
+            self?.alertGoToSettings?.addAction(UIAlertAction.goToSettingsAction())
 
-            guard let alertGoToSettings = self?.alertGoToSettings else { return }
-            self?.present(alertGoToSettings,
-                          animated: true,
-                          completion: nil)
+            self?.presentWithTopViewController(self?.alertGoToSettings)
         }
     }
 
     @objc private func hideAlertGoToSettings() {
-        alertGoToSettings?.dismiss(animated: true,
-                                   completion: nil)
+        print("Hide alert Go to Settings")
+        alertGoToSettings?.dismissAlert()
     }
 
     private func showNotificationSettingsWarningAlert() {

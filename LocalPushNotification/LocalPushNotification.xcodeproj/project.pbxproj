@@ -53,6 +53,8 @@
 		E2C1A0602847D728007A049A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C1A05F2847D728007A049A /* LocationManager.swift */; };
 		E2C6A4462853379B005682FA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6A4452853379B005682FA /* UIView+Extensions.swift */; };
 		E2C6A4482853420C005682FA /* Number+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6A4472853420C005682FA /* Number+Extensions.swift */; };
+		E2D3F6E4286303010094D510 /* UIAlertAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D3F6E3286303010094D510 /* UIAlertAction+Extensions.swift */; };
+		E2D3F6E62863090E0094D510 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D3F6E52863090E0094D510 /* UIAlertController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,8 @@
 		E2C1A05F2847D728007A049A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E2C6A4452853379B005682FA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E2C6A4472853420C005682FA /* Number+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extensions.swift"; sourceTree = "<group>"; };
+		E2D3F6E3286303010094D510 /* UIAlertAction+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extensions.swift"; sourceTree = "<group>"; };
+		E2D3F6E52863090E0094D510 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,7 +243,9 @@
 				E293D7A52851FADE00269F79 /* UITableView+Extensions.swift */,
 				E27C48382855C66600ABB445 /* UIScrollView+Extensions.swift */,
 				E215BF5D284771B7000B4570 /* UIApplication+Extensions.swift */,
+				E2D3F6E3286303010094D510 /* UIAlertAction+Extensions.swift */,
 				E215BF5B284767A5000B4570 /* UIViewController+Extensions.swift */,
+				E2D3F6E52863090E0094D510 /* UIAlertController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -699,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E24274FC2856F375008F0D3D /* ProviderDelegate.swift in Sources */,
+				E2D3F6E62863090E0094D510 /* UIAlertController+Extensions.swift in Sources */,
 				E275B99A285A1F5F00B9133F /* TrafficeLightPresenter.swift in Sources */,
 				E293D7A62851FADE00269F79 /* UITableView+Extensions.swift in Sources */,
 				E27C48402856098900ABB445 /* CallKitViewModel.swift in Sources */,
@@ -730,6 +737,7 @@
 				E215BF5C284767A5000B4570 /* UIViewController+Extensions.swift in Sources */,
 				E2223D1B285C8B920098C4CA /* CoreMotionViewController.swift in Sources */,
 				E293D79E2851F46500269F79 /* MyCoreData.xcdatamodeld in Sources */,
+				E2D3F6E4286303010094D510 /* UIAlertAction+Extensions.swift in Sources */,
 				E293D7A42851F59300269F79 /* CoreDataHomeViewController.swift in Sources */,
 				E2223D15285C7F000098C4CA /* CoreMotionManager.swift in Sources */,
 				E215BF5228474156000B4570 /* RemoteNotificationManager.swift in Sources */,
