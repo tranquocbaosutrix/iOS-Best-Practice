@@ -15,6 +15,7 @@ public enum CaseStudy: String, CaseIterable {
     case AVKit = "Practice AVKit"
     case PDFKit = "Practice PDFKit"
     case MVP = "Practice MVP"
+    case CoreMotion = "Practice CoreMotion"
 }
 
 class HomeViewModel {
@@ -44,6 +45,7 @@ class HomeViewModel {
         caseStudyList.append(.AVKit)
         caseStudyList.append(.PDFKit)
         caseStudyList.append(.MVP)
+        caseStudyList.append(.CoreMotion)
     }
 
     func checkNotificationAuthorizationStatus() {
@@ -53,7 +55,7 @@ class HomeViewModel {
             } else if (status == .denied) {
                 self?.showRequestNotiDeniedAlert?()
             } else if (status == .authorized) {
-//                self?.dismissWarningAlert?()
+                self?.dismissWarningAlert?()
             }
         }
     }
@@ -88,6 +90,8 @@ class HomeViewModel {
             return nil
         case .MVP:
             return TrafficLightViewController()
+        case .CoreMotion:
+            return CoreMotionViewController()
         }
     }
 

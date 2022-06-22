@@ -14,44 +14,43 @@ extension UIViewController {
                                                            target: nil,
                                                            action: nil)
     }
-
+    
     func removeObservers() {
         NotificationCenter.default.removeObserver(self)
     }
-
-    func showAlert(_ viewController: UIViewController,
+    
+    func showAlert(_ viewController: UIViewController?,
                    title: String,
                    message: String) {
+        let dialogMessage = UIAlertController(title: title,
+                                              message: message,
+                                              preferredStyle: .alert)
         DispatchQueue.main.async {
-            let dialogMessage = UIAlertController(title: title,
-                                                  message: message,
-                                                  preferredStyle: .alert)
-
-            viewController.present(dialogMessage, animated: true)
+            viewController?.present(dialogMessage, animated: true)
         }
     }
-
-    func showAlert(_ viewController: UIViewController,
+    
+    func showAlert(_ viewController: UIViewController?,
                    title: String,
                    message: String,
                    actions: [UIAlertAction]) {
+        if actions.isEmpty {
+            return
+        }
+
+        let dialogMessage = UIAlertController(title: title,
+                                              message: message,
+                                              preferredStyle: .alert)
+
+        for action in actions {
+            dialogMessage.addAction(action)
+        }
+
         DispatchQueue.main.async {
-            if actions.isEmpty {
-                return
-            }
-
-            let dialogMessage = UIAlertController(title: title,
-                                                  message: message,
-                                                  preferredStyle: .alert)
-
-            for action in actions {
-                dialogMessage.addAction(action)
-            }
-
-            viewController.present(dialogMessage, animated: true)
+            viewController?.present(dialogMessage, animated: true)
         }
     }
-
+    
     func dismissAllPresentedAlertViewController() {
         DispatchQueue.main.async {
             let viewController = UIApplication.topViewControllerInNavigationStack()
@@ -59,7 +58,7 @@ extension UIViewController {
             viewController?.dismiss(animated: false)
         }
     }
-
+    
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
@@ -70,15 +69,15 @@ extension UIViewController {
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
-
+    
     @objc private func keyboardWillShow(notification: Notification) {
         handle(notification: notification, showingKeyboard: true)
     }
-
+    
     @objc private func keyboardWillHide(notification: Notification) {
         handle(notification: notification, showingKeyboard: false)
     }
-
+    
     private func handle(notification: Notification, showingKeyboard: Bool) {
         guard let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height,
               let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
@@ -95,6 +94,34 @@ extension UIViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
-
+    
     @objc func animateConstraints(withKeyboardHeight keyboardHeight: CGFloat, showingKeyboard: Bool) { }
+    
+    func showAlertGoToSettings(title: String,
+                               message: String) {
+
+        DispatchQueue.main.async { [weak self] in
+            let controller = UIApplication.topViewControllerInNavigationStack()
+
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl) { success in
+                        print("Settings opened: \(success)")
+                    }
+                }
+
+            }
+
+            self?.showAlert(controller,
+                      title: title,
+                      message: message,
+                      actions: [settingsAction])
+        }
+
+    }
 }

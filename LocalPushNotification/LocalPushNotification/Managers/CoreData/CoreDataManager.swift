@@ -16,7 +16,12 @@ enum TaskEntityKeyName: String {
     case createdDate
 }
 
-class CoreDataManager {
+protocol CoreDataManagerProtocol {
+    func fetchRequest<T>(_ request: NSFetchRequest<T>) -> [Any]?
+    func deleteObject(_ object: NSManagedObject)
+}
+
+class CoreDataManager: CoreDataManagerProtocol {
 
     ///MARK: Constructor
     private init() {}

@@ -14,15 +14,17 @@ class HomeViewController: UIViewController {
     private lazy var tableViewCaseStudy: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .white
-//        tableView.separatorStyle = .none
-//        tableView.contentInsetAdjustmentBehavior = .never
+        //        tableView.separatorStyle = .none
+        //        tableView.contentInsetAdjustmentBehavior = .never
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CaseStudyUITableViewCell.self,
                            forCellReuseIdentifier: CaseStudyUITableViewCell.className)
-        
+
         return tableView
     }()
+
+    private lazy var alertGoToSettings: UIAlertController? = nil
 
     /// Properties
     private let viewModel = HomeViewModel()
@@ -32,9 +34,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        observeAppState()
         checkNotificationPermission()
         showNotificationSettingsWarningAlert()
-        observeAppState()
     }
 
     deinit {
@@ -46,7 +48,7 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         title = "Home"
         clearBackButtonTitle()
-        
+
         view.addSubview(tableViewCaseStudy)
 
         tableViewCaseStudy.snp.makeConstraints { make in
@@ -56,17 +58,51 @@ class HomeViewController: UIViewController {
         }
     }
 
+    private func showAlertGoToSettings() {
+        DispatchQueue.main.async { [weak self] in
+            let settingsAction = UIAlertAction(title: "Settings",
+                                               style: .default) { _ in
+
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl) { success in
+                        print("Settings opened: \(success)")
+                    }
+                }
+
+            }
+
+            self?.alertGoToSettings = UIAlertController(title: "Notice",
+                                                        message: "Notification is turned off. Please turn on it to continue using this app.",
+                                                        preferredStyle: .alert)
+
+            self?.alertGoToSettings?.addAction(settingsAction)
+
+            guard let alertGoToSettings = self?.alertGoToSettings else { return }
+            self?.present(alertGoToSettings,
+                          animated: true,
+                          completion: nil)
+        }
+    }
+
+    @objc private func hideAlertGoToSettings() {
+        alertGoToSettings?.dismiss(animated: true,
+                                   completion: nil)
+    }
+
     private func showNotificationSettingsWarningAlert() {
         viewModel
-            .showRequestNotiDeniedAlert = {
-                self.showAlert(self,
-                               title: "Warning",
-                               message: "Notification permission is denied")
+            .showRequestNotiDeniedAlert = { [weak self] in
+                print("Show alert Go to Settings")
+                self?.showAlertGoToSettings()
             }
 
         viewModel
-            .dismissWarningAlert = {
-                self.dismissAllPresentedAlertViewController()
+            .dismissWarningAlert = { [weak self] in
+                self?.dismissAllPresentedAlertViewController()
             }
     }
 
@@ -74,6 +110,11 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(checkNotificationPermission),
                                                name: UIApplication.willEnterForegroundNotification,
+                                               object: nil)
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(hideAlertGoToSettings),
+                                               name: UIApplication.didEnterBackgroundNotification,
                                                object: nil)
     }
 
@@ -120,5 +161,5 @@ extension HomeViewController: UITableViewDelegate {
 
         self.navigationController?.pushViewController(destinationViewController, animated: true)
     }
-    
+
 }

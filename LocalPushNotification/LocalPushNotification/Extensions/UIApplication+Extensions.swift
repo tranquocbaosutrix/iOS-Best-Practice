@@ -8,21 +8,15 @@
 import UIKit
 
 extension UIApplication {
-    static func topViewControllerInNavigationStack(_ controller: UIViewController? = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController) -> UIViewController? {
-        if let navigationController = controller as? UINavigationController {
-            return topViewControllerInNavigationStack(navigationController)
-        }
-        
-        if let tabController = controller as? UITabBarController {
-            if let selected = tabController.selectedViewController {
-                return topViewControllerInNavigationStack(selected)
+    static func topViewControllerInNavigationStack() -> UIViewController? {
+        if var topController = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
             }
+
+            return topController
         }
-        
-        if let presented = controller?.presentedViewController {
-            return topViewControllerInNavigationStack(presented)
-        }
-        
-        return controller
+
+        return nil
     }
 }

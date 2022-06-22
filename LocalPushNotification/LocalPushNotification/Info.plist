@@ -12,5 +12,7 @@
 		<string>audio</string>
 		<string>voip</string>
 	</array>
+	<key>NSMotionUsageDescription</key>
+	<string>This app requires your motion data for tracking the user activites if needed</string>
 </dict>
 </plist>
