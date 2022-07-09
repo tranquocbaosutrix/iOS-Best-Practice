@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CoreMotionViewModel {
+final class CoreMotionViewModel {
 
     var userActivityHandler: ((String) -> ())?
 

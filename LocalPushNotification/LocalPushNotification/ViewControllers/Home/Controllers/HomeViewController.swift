@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     /// UI Properties
     private lazy var tableViewCaseStudy: UITableView = {
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
+        setUpUI()
         observeAppState()
         checkNotificationPermission()
         showNotificationSettingsWarningAlert()
@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
     }
 
     /// MARK: Functions
-    private func setupUI() {
+    private final func setUpUI() {
         title = "Home"
         clearBackButtonTitle()
 
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
         }
     }
 
-    private func showAlertGoToSettings() {
+    private final func showAlertGoToSettings() {
         DispatchQueue.main.async { [weak self] in
             self?.alertGoToSettings = UIAlertController(title: "Notice",
                                                         message: "Notification is turned off. Please turn on it to continue using this app.",
@@ -70,12 +70,12 @@ class HomeViewController: UIViewController {
         }
     }
 
-    @objc private func hideAlertGoToSettings() {
+    @objc private final func hideAlertGoToSettings() {
         print("Hide alert Go to Settings")
         alertGoToSettings?.dismissAlert()
     }
 
-    private func showNotificationSettingsWarningAlert() {
+    private final func showNotificationSettingsWarningAlert() {
         viewModel
             .showRequestNotiDeniedAlert = { [weak self] in
                 print("Show alert Go to Settings")
@@ -88,7 +88,7 @@ class HomeViewController: UIViewController {
             }
     }
 
-    private func observeAppState() {
+    private final func observeAppState() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(checkNotificationPermission),
                                                name: UIApplication.willEnterForegroundNotification,
@@ -100,7 +100,7 @@ class HomeViewController: UIViewController {
                                                object: nil)
     }
 
-    @objc private func checkNotificationPermission() {
+    @objc private final func checkNotificationPermission() {
         viewModel.checkNotificationAuthorizationStatus()
     }
 

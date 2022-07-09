@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CallUITableViewCell: UITableViewCell {
+final class CallUITableViewCell: UITableViewCell {
 
     /// MARK: UI Properties
     lazy var labelCallName: UILabel = {
@@ -31,7 +31,7 @@ class CallUITableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        setupUI()
+        setUpUI()
     }
 
     required init?(coder: NSCoder) {
@@ -39,7 +39,7 @@ class CallUITableViewCell: UITableViewCell {
     }
 
     /// MARK: Functions
-    private func setupUI() {
+    private final func setUpUI() {
         contentView.addSubview(labelCallName)
         contentView.addSubview(labelCallStatus)
 

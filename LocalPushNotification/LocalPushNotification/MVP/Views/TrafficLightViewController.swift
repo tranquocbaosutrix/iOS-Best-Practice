@@ -56,7 +56,7 @@ class TrafficLightViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
+        setUpUI()
         setupPresenter()
     }
 
@@ -65,7 +65,7 @@ class TrafficLightViewController: UIViewController {
         trafficLightPresenter.setViewDelegate(trafficLightViewDelegate: self)
     }
 
-    private func setupUI() {
+    private func setUpUI() {
         title = "MVP Best Practice"
 
         view.backgroundColor = .white

@@ -5,7 +5,7 @@
 //  Created by TranQuocBao on 12/06/2022.
 //
 
-class CallKitViewModel {
+final class CallKitViewModel {
 
     /// MARK: Constructor
     init() {
@@ -26,11 +26,11 @@ class CallKitViewModel {
     }
 
     /// MARK: Functions
-    private func call(at index: Int) -> Call {
+    private final func call(at index: Int) -> Call {
         return CallManager.shared.calls[index]
     }
 
-    func checkPhoneInput(_ phone: String?) {
+    final func checkPhoneInput(_ phone: String?) {
 //        if let phone = phone,
 //            !phone.isEmpty,
 //            Utils.isValidPhone(phone: phone) {
@@ -47,12 +47,12 @@ class CallKitViewModel {
         }
     }
 
-    func callName(at index: Int) -> String {
+    final func callName(at index: Int) -> String {
         let call = CallManager.shared.calls[index]
         return "\(call.outgoing ? "Outgoing Call: " : "Incoming Call: ") \(call.handle)"
     }
 
-    func callStatus(at index: Int) -> String {
+    final func callStatus(at index: Int) -> String {
         let call = call(at: index)
 
         switch call.state {
@@ -67,17 +67,17 @@ class CallKitViewModel {
         }
     }
 
-    func endCall(at index: Int) {
+    final func endCall(at index: Int) {
         CallManager.shared.end(call: call(at: index))
     }
 
-    func holdCall(at index: Int) {
+    final func holdCall(at index: Int) {
         let call = call(at: index)
         call.state = call.state == .held ? .active : .held
         CallManager.shared.setHeld(call: call, onHold: call.state == .held)
     }
 
-    func makeOutgoingCall() {
+    final func makeOutgoingCall() {
         ProviderDelegate.shared.startCall(handle: "1111", videoEnabled: false)
     }
 }

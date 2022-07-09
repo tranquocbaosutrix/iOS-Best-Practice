@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CoreMotionViewController: UIViewController {
+final class CoreMotionViewController: UIViewController {
 
     /// MARK: UI Properties
     private lazy var labelCurrentUserActivity: UILabel = {
@@ -25,12 +25,12 @@ class CoreMotionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
+        setUpUI()
 //        observeAppState()
     }
 
     /// MARK: Functions
-    private func setupUI() {
+    private final func setUpUI() {
         view.backgroundColor = .white
 
         view.addSubview(labelCurrentUserActivity)
@@ -41,7 +41,7 @@ class CoreMotionViewController: UIViewController {
         ])
     }
 
-    private func observeMotionActivity() {
+    private final func observeMotionActivity() {
         CoreMotionManager.shared.observeUserActivity { [weak self] userActivity in
             self?.viewModel.updateUserActivity(userActivity)
         }
@@ -51,14 +51,14 @@ class CoreMotionViewController: UIViewController {
         }
     }
 
-    private func observeAppState() {
+    private final func observeAppState() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(checkMotionPermission),
                                                name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
     }
 
-    @objc private func checkMotionPermission() {
+    @objc private final func checkMotionPermission() {
         viewModel.checkMotionAuthorizationStatus()
     }
 

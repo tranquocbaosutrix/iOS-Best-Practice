@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Utils.setAppMode()
 
-        Utils.setRootView(HomeViewController(), isHasNavigation: true)
+        Utils.setRootView(HomeViewController(),
+                          isHasNavigation: true)
 
         RemoteNotificationManager.shared.registerForRemoteNotifications()
 

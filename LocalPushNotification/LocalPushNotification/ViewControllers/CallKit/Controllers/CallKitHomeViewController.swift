@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CallKitHomeViewController: UIViewController {
+final class CallKitHomeViewController: UIViewController {
 
     /// MARK: UI Properties
     private lazy var tableViewCalls: UITableView = {
@@ -41,7 +41,7 @@ class CallKitHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
+        setUpUI()
         observeCalls()
     }
 
@@ -50,7 +50,7 @@ class CallKitHomeViewController: UIViewController {
     }
 
     /// MARK: Functions
-    private func setupUI() {
+    private final func setUpUI() {
         title = "CallKit"
 
         view.backgroundColor = .white
@@ -78,11 +78,11 @@ class CallKitHomeViewController: UIViewController {
         navigationItem.rightBarButtonItem = addNewCallBarButtonItem
     }
 
-    @objc private func addNewCall() {
+    @objc private final func addNewCall() {
         showAddNewCallAlert()
     }
 
-    private func showAddNewCallAlert() {
+    private final func showAddNewCallAlert() {
         let alert = UIAlertController(title: "New Call",
                                       message: "Add a new call",
                                       preferredStyle: .alert)
@@ -107,7 +107,7 @@ class CallKitHomeViewController: UIViewController {
                 completion: nil)
     }
 
-    private func displayIncomingCall(handle: String,
+    private final func displayIncomingCall(handle: String,
                                      hasVideo: Bool = false) {
 
         let backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
@@ -121,7 +121,7 @@ class CallKitHomeViewController: UIViewController {
         }
     }
 
-    private func observeCalls() {
+    private final func observeCalls() {
         viewModel.reloadCallTableView = { [weak self] in
             self?.tableViewCalls.reloadData()
         }
@@ -131,7 +131,7 @@ class CallKitHomeViewController: UIViewController {
         }
     }
 
-    @objc private func makeNewOutgoingCall() {
+    @objc private final func makeNewOutgoingCall() {
         viewModel.makeOutgoingCall()
     }
 

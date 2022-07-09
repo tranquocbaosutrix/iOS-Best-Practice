@@ -25,6 +25,9 @@
 		E22DF7B328585DDE00753C52 /* LocalPushNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22DF7B228585DDE00753C52 /* LocalPushNotificationUITests.swift */; };
 		E22DF7B528585DDE00753C52 /* LocalPushNotificationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22DF7B428585DDE00753C52 /* LocalPushNotificationUITestsLaunchTests.swift */; };
 		E22F3D56285329040047CD21 /* CaseStudyUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F3D55285329040047CD21 /* CaseStudyUITableViewCell.swift */; };
+		E23C47EC2879D4EE00896073 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C47EB2879D4EE00896073 /* MainCollectionViewController.swift */; };
+		E23C47EF2879D59C00896073 /* MainCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C47EE2879D59C00896073 /* MainCollectionViewModel.swift */; };
+		E23C47F22879DDA500896073 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C47F12879DDA500896073 /* UIColor+Extensions.swift */; };
 		E24274FC2856F375008F0D3D /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24274FB2856F375008F0D3D /* ProviderDelegate.swift */; };
 		E24274FF2856F4BE008F0D3D /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24274FE2856F4BE008F0D3D /* Call.swift */; };
 		E24275012856F6E2008F0D3D /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24275002856F6E2008F0D3D /* CallManager.swift */; };
@@ -53,6 +56,7 @@
 		E2C1A0602847D728007A049A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C1A05F2847D728007A049A /* LocationManager.swift */; };
 		E2C6A4462853379B005682FA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6A4452853379B005682FA /* UIView+Extensions.swift */; };
 		E2C6A4482853420C005682FA /* Number+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C6A4472853420C005682FA /* Number+Extensions.swift */; };
+		E2D00C9D2872D514001163F7 /* FirstMemoryLeakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D00C9C2872D514001163F7 /* FirstMemoryLeakViewController.swift */; };
 		E2D3F6E4286303010094D510 /* UIAlertAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D3F6E3286303010094D510 /* UIAlertAction+Extensions.swift */; };
 		E2D3F6E62863090E0094D510 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D3F6E52863090E0094D510 /* UIAlertController+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -113,6 +117,9 @@
 		E22DF7B228585DDE00753C52 /* LocalPushNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotificationUITests.swift; sourceTree = "<group>"; };
 		E22DF7B428585DDE00753C52 /* LocalPushNotificationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushNotificationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E22F3D55285329040047CD21 /* CaseStudyUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseStudyUITableViewCell.swift; sourceTree = "<group>"; };
+		E23C47EB2879D4EE00896073 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		E23C47EE2879D59C00896073 /* MainCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewModel.swift; sourceTree = "<group>"; };
+		E23C47F12879DDA500896073 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		E24274FB2856F375008F0D3D /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		E24274FE2856F4BE008F0D3D /* Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
 		E24275002856F6E2008F0D3D /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
@@ -142,6 +149,7 @@
 		E2C1A05F2847D728007A049A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E2C6A4452853379B005682FA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E2C6A4472853420C005682FA /* Number+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extensions.swift"; sourceTree = "<group>"; };
+		E2D00C9C2872D514001163F7 /* FirstMemoryLeakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMemoryLeakViewController.swift; sourceTree = "<group>"; };
 		E2D3F6E3286303010094D510 /* UIAlertAction+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extensions.swift"; sourceTree = "<group>"; };
 		E2D3F6E52863090E0094D510 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +237,8 @@
 				E27C483A2855F4F600ABB445 /* CallKit */,
 				E293D7A22851F57600269F79 /* CoreData */,
 				E2223D19285C8B7C0098C4CA /* CoreMotion */,
+				E2D00C9B2872D4F0001163F7 /* MemoryLeak */,
+				E23C47EA2879D4C600896073 /* CollectionView */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -238,6 +248,7 @@
 			children = (
 				E27C482B2855B02200ABB445 /* Date+Extensions.swift */,
 				E2C6A4452853379B005682FA /* UIView+Extensions.swift */,
+				E23C47F12879DDA500896073 /* UIColor+Extensions.swift */,
 				E2C6A4472853420C005682FA /* Number+Extensions.swift */,
 				E27C48362855C51F00ABB445 /* NSObject+Extensions.swift */,
 				E293D7A52851FADE00269F79 /* UITableView+Extensions.swift */,
@@ -320,6 +331,31 @@
 				E22DF7B428585DDE00753C52 /* LocalPushNotificationUITestsLaunchTests.swift */,
 			);
 			path = LocalPushNotificationUITests;
+			sourceTree = "<group>";
+		};
+		E23C47EA2879D4C600896073 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E23C47F02879D5B400896073 /* Controllers */,
+				E23C47ED2879D58E00896073 /* ViewModels */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		E23C47ED2879D58E00896073 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E23C47EE2879D59C00896073 /* MainCollectionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E23C47F02879D5B400896073 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E23C47EB2879D4EE00896073 /* MainCollectionViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		E275B992285A1EF500B9133F /* MVP */ = {
@@ -521,6 +557,14 @@
 			path = BestPracticeDirectory;
 			sourceTree = "<group>";
 		};
+		E2D00C9B2872D4F0001163F7 /* MemoryLeak */ = {
+			isa = PBXGroup;
+			children = (
+				E2D00C9C2872D514001163F7 /* FirstMemoryLeakViewController.swift */,
+			);
+			path = MemoryLeak;
+			sourceTree = "<group>";
+		};
 		F554789353C0D26581CBDB38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,7 +641,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					E215BF3128472B92000B4570 = {
 						CreatedOnToolsVersion = 13.3;
@@ -714,18 +758,22 @@
 				E275B998285A1F5000B9133F /* TrafficLight.swift in Sources */,
 				E27C482C2855B02200ABB445 /* Date+Extensions.swift in Sources */,
 				E24274FF2856F4BE008F0D3D /* Call.swift in Sources */,
+				E2D00C9D2872D514001163F7 /* FirstMemoryLeakViewController.swift in Sources */,
 				E27C48392855C66600ABB445 /* UIScrollView+Extensions.swift in Sources */,
 				E215BF55284748A2000B4570 /* AppPermissionProtocol.swift in Sources */,
+				E23C47EC2879D4EE00896073 /* MainCollectionViewController.swift in Sources */,
 				E275B99C285A1F7500B9133F /* TrafficLightViewController.swift in Sources */,
 				E27C48372855C51F00ABB445 /* NSObject+Extensions.swift in Sources */,
 				E27C482F2855B29300ABB445 /* TaskModel.swift in Sources */,
 				E2A3E38228487D4F0029BD27 /* LocalNotificationManager.swift in Sources */,
 				E2C6A4482853420C005682FA /* Number+Extensions.swift in Sources */,
+				E23C47F22879DDA500896073 /* UIColor+Extensions.swift in Sources */,
 				E26915192853B63A005925B4 /* NewTaskUITableViewCell.swift in Sources */,
 				E215BF5828474AB2000B4570 /* HomeViewModel.swift in Sources */,
 				E275B99E285A1F8A00B9133F /* TrafficLightService.swift in Sources */,
 				E2AEDDA22857479E004A4CF1 /* CallUITableViewCell.swift in Sources */,
 				E215BF3628472B92000B4570 /* AppDelegate.swift in Sources */,
+				E23C47EF2879D59C00896073 /* MainCollectionViewModel.swift in Sources */,
 				E24275012856F6E2008F0D3D /* CallManager.swift in Sources */,
 				E2C6A4462853379B005682FA /* UIView+Extensions.swift in Sources */,
 				E27C483C2855F51300ABB445 /* CallKitHomeViewController.swift in Sources */,
@@ -1024,7 +1072,6 @@
 		E2BCAD7D2857AB39001E49E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1053,7 +1100,6 @@
 		E2BCAD7E2857AB39001E49E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Automatic;

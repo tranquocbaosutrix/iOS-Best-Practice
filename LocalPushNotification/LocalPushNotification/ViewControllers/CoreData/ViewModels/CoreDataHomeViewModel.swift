@@ -7,7 +7,7 @@
 
 import CoreData
 
-class CoreDataViewModel {
+final class CoreDataViewModel {
     /// MARK: Constructor
     init() {
         getExistingTasks()
@@ -27,11 +27,11 @@ class CoreDataViewModel {
     var reloadTaskList: (() -> ())?
 
     /// MARK: Functions
-    func scrollToIndexIfNeeded() -> Bool {
+    final func scrollToIndexIfNeeded() -> Bool {
         return !taskList.isEmpty
     }
 
-    func indexPathForScrolling(_ showingKeyboard: Bool) -> IndexPath {
+    final func indexPathForScrolling(_ showingKeyboard: Bool) -> IndexPath {
         if showingKeyboard {
             return IndexPath(row: taskList.count - 1,
                              section: 0)
@@ -41,15 +41,15 @@ class CoreDataViewModel {
         }
     }
 
-    func taskName(at index: Int) -> String {
+    final func taskName(at index: Int) -> String {
         return currentTaskList[index].name
     }
 
-    func taskCreatedDate(at index: Int) -> String {
+    final func taskCreatedDate(at index: Int) -> String {
         return "Created Date: \(currentTaskList[index].createdDate.formattedDate(.type3))"
     }
 
-    func saveNewTask(_ task: String?) {
+    final func saveNewTask(_ task: String?) {
         guard let task = task else { return }
 
         let tempTask = task.isEmpty ? "Anonymous task :]]" : task
@@ -74,7 +74,7 @@ class CoreDataViewModel {
         reloadTaskList?()
     }
 
-    func deleteExistingTask(at indexPath: IndexPath) {
+    final func deleteExistingTask(at indexPath: IndexPath) {
         let index = indexPath.row
 
         CoreDataManager.shared.deleteObject(taskManagedObjectList[index])
@@ -84,7 +84,7 @@ class CoreDataViewModel {
         reloadTaskList?()
     }
 
-    func getExistingTasks() {
+    final func getExistingTasks() {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: EntityName.Task.rawValue)
 
         guard let savedTasks = CoreDataManager.shared.fetchRequest(fetchRequest) as? [NSManagedObject]

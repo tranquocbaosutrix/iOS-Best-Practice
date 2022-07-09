@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CaseStudyUITableViewCell: UITableViewCell {
+final class CaseStudyUITableViewCell: UITableViewCell {
     
     /// MARK: UI Properties
     lazy var labelTitle: UILabel = {
@@ -32,7 +32,7 @@ class CaseStudyUITableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupUI()
+        setUpUI()
     }
     
     required init?(coder: NSCoder) {
@@ -40,7 +40,7 @@ class CaseStudyUITableViewCell: UITableViewCell {
     }
     
     /// MARK: Functions
-    private func setupUI() {
+    private final func setUpUI() {
         selectionStyle = .none
         
         contentView.addSubview(labelTitle)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCoreDataViewController: UIViewController {
+final class HomeCoreDataViewController: UIViewController {
 
     /// MARK: UI Properties
     private lazy var tableViewTask: UITableView = {
@@ -28,7 +28,7 @@ class HomeCoreDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
+        setUpUI()
         registerForKeyboardNotifications()
         observeViewModel()
     }
@@ -39,7 +39,7 @@ class HomeCoreDataViewController: UIViewController {
     }
 
     /// MARK: Functions
-    private func setupUI() {
+    private final func setUpUI() {
         title = "CoreData"
 
         view.backgroundColor = .white
@@ -58,7 +58,7 @@ class HomeCoreDataViewController: UIViewController {
         navigationItem.rightBarButtonItem = addNewTaskBarButtonItem
     }
 
-    private func observeViewModel() {
+    private final func observeViewModel() {
         viewModel.reloadTaskList = { [weak self] in
             self?.tableViewTask.reloadData()
         }
@@ -74,11 +74,11 @@ class HomeCoreDataViewController: UIViewController {
         }
     }
 
-    @objc private func addNewTask() {
+    @objc private final func addNewTask() {
         showAddNewTaskAlert()
     }
 
-    private func showAddNewTaskAlert() {
+    private final func showAddNewTaskAlert() {
         let alert = UIAlertController(title: "New Name",
                                       message: "Add a new task",
                                       preferredStyle: .alert)

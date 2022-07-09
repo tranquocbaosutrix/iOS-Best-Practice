@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewTaskUITableViewCell: UITableViewCell {
+final class NewTaskUITableViewCell: UITableViewCell {
 
     ///MARK: UI Properties
     lazy var labelTitle: UILabel = {
@@ -29,7 +29,7 @@ class NewTaskUITableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        setupUI()
+        setUpUI()
     }
 
     required init?(coder: NSCoder) {
@@ -41,7 +41,7 @@ class NewTaskUITableViewCell: UITableViewCell {
     }
 
     /// MARK: Functions
-    private func setupUI() {
+    private final func setUpUI() {
         contentView.addSubview(labelTitle)
         contentView.addSubview(labelSubTitle)
 
